@@ -3,8 +3,11 @@ import jakarta.jws.WebService;
 import jakarta.jws.soap.SOAPBinding;
 
 
-@WebService
-@SOAPBinding(style = SOAPBinding.Style.RPC)
+@WebService(
+        serviceName = "StringManipulationService",
+        portName = "StringManipulationServicePort",
+        targetNamespace = "http://stringmanipulation.example.com/"
+)
 public class StringManipulationServiceImpl implements StringManipulationService {
     @Override
     public String reverseText(String text) {
